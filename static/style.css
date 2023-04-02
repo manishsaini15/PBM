@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#chart {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* set the height to the full height of the viewport */
+  }
+  
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #162dd7;
+    color: #ffffff;
+}
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar li {
+    margin-right: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.navbar li:last-child {
+    margin-right: 0;
+}
+.navbar a {
+    text-decoration: none;
+    padding: 10px;
+color:red;
+}
+.navbar a:hover {
+    background-color: #fff;
+    color: #333;
+    border-radius: 6px;
+}
+.navbar a:last-child {
+    margin-left: auto;
+}

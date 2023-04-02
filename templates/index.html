@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Input Parameters</h1>
+    <form action="{{ url_for('index') }}" method="post">
+      <label for="v_min">Minimum Velocity:</label>
+      <input type="number" step="any" name="v_min" required><br>
+
+      <label for="v_max">Maximum Velocity:</label>
+      <input type="number" step="any" name="v_max" required><br>
+
+      <label for="grid_ratio">Grid Ratio:</label>
+      <input type="number" step="any" name="grid_ratio" required><br>
+
+      <label for="start_time">Start Time:</label>
+      <input type="number" step="any" name="start_time" required><br>
+
+      <label for="end_time">End Time:</label>
+      <input type="number" step="any" name="end_time" required><br>
+
+      <label for="number_density">Number Density:</label>
+      <input type="number" step="any" name="number_density" required><br>
+
+      <label for="kernel">Daughter Distribution Kernel:</label>
+      <select name="kernel" required>
+        <option value="gaussian">Gaussian</option>
+        <option value="exponential">Exponential</option>
+        <option value="lognormal">Lognormal</option>
+      </select><br>
+
+      <label for="brekage_rate">Brekage Rate:</label>
+      <input type="number" step="any" name="brekage_rate" required><br>
+
+      <label for="initial_condition">Initial Condition:</label>
+      <textarea name="initial_condition" rows="5" cols="40" required></textarea><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

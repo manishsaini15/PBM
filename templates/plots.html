@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All plots</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .container {
+            background-color: rgb(14, 27, 27);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+          }   
+          .plot {
+            flex: 1 0 auto;
+            margin-right: 5px;
+            margin-bottom: 1px;
+            height: 500px; 
+            width: 500px;
+          }
+    </style>
+
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <div class="container">  
+        <div class="plot" id="plot1">{{plot1|safe}}</div>
+        <div class="plot" id="plot2">{{plot2|safe}}</div>
+        <div class="plot" id="plot3">{{plot3|safe}}</div>
+        <div class="plot" id="plot4">{{plot4|safe}}</div>
+    </div>
+  </body>
+</html>

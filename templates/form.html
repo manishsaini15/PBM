@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>One Dimenesion PBE Solver</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<style>
+    *{
+            margin: 0;
+            padding: 0;
+        }
+		#form-box {
+			border: 1px solid hwb(0 7% 28%);
+			padding: 20px;
+			margin: 30px 30vw 30px 30vw;
+			width: 40%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			border-radius: 13px;
+		  }
+		  
+		  .title{
+			margin: auto;
+			text-align: center;
+			margin-bottom: 20px;
+		  }
+		  
+		  .bold-label {
+			font-weight: bold;
+			margin-bottom: 5px;
+			text-align: left;
+		  }
+		  
+		  .form-group {
+			flex-basis: 48%;
+			margin-bottom: 20px;
+		  }
+		  
+		  .form-group input[type="text"] {
+			width: 100%;
+			padding: 8px;
+			border: 1px solid #561cc1;
+			border-radius: 4px;
+			box-sizing: border-box;
+		  }
+		  
+		  .column {
+			flex-basis: 48%;
+		  }
+		  
+		  .row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		  }
+		  
+		  .row .form-group {
+			flex-basis: 100%;
+		  }
+		  button[type="submit"] {
+			display: block;
+			margin: auto;
+			font-size: 0.75em;
+			padding: 10px 20px;
+			border-radius: 10px;
+			background-color: #561cc1;
+			color: #fff;
+		  }
+ 
+   .navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px;
+			background-color: #162dd7;
+			color: #ffffff;
+		}
+		.navbar ul {
+			display: flex;
+			align-items: center;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.navbar li {
+			margin-right: 20px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		.navbar li:last-child {
+			margin-right: 0;
+		}
+		.navbar a {
+			text-decoration: none;
+			padding: 10px;
+      color:red;
+		}
+		.navbar a:hover {
+			background-color: #fff;
+			color: #333;
+			border-radius: 6px;
+		}
+		.navbar a:last-child {
+			margin-left: auto;
+			border-radius: 6px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="navbar">
+		<ul>
+		  <li><a>Home</a></li>
+		  <li><a>All plots</a></li>
+		  <li><a>Zeroth Moments</a></li>
+		  <li><a >First Moments</a></li>
+		  <li><a>Second Moments</a></li>
+		  <li><a>Density Distribution</a></li>
+		</ul>
+		<!-- <a href="{{ url_for('download_data') }}" download>Download Data</a> -->
+		<a >Download Data</a>
+	   
+	</div>
+	<div id="form-box">
+    <div class="title">
+      <h1 style="margin-top: 0px;">One Dimension PBE Solver</h1>
+    </div>
+    <form method="POST" action="{{ url_for('form') }}">
+			<div class="row">
+				<div class="column">
+					<div class="form-group">
+						<label class="bold-label" for="minVolume">Minimum Volume:</label>
+						<input type="text" id="minVolume" name="minVolume">
+					</div>
+					<div class="form-group">
+						<label class="bold-label" for="maxVolume">Maximum Volume:</label>
+						<input type="text" id="maxVolume" name="maxVolume">
+					</div>
+					<div class="form-group">
+						<label class="bold-label" for="startTime">Start Time:</label>
+						<input type="text" id="startTime" name="startTime">
+					</div>
+					<div class="form-group">
+						<label class="bold-label" for="endTime">End Time:</label>
+						<input type="text" id="endTime" name="endTime">
+					</div>
+          <div class="form-group">
+						<label class="bold-label" for="gridRatio">Grid Ratio:</label>
+						<input type="text" id="gridRatio" name="gridRatio">
+					</div>
+				</div>
+				<div class="column">
+          <div class="form-group">
+						<label class="bold-label" for="aggregationkernel">Aggregation kernel:</label>
+						<input type="text" id="aggregationkernel" name="aggregationkernel">
+					</div>
+					<div class="form-group">
+						<label class="bold-label" for="numberDensity">Number Density at time:</label>
+						<input type="text" id="numberDensity" name="numberDensity">
+					</div>
+					<div class="form-group">
+						<label class="bold-label" for="breakageRate">Breakage Rate:</label>
+						<input type="text" id="breakageRate" name="breakageRate">
+					</div>
+					<div class="form-group">
+						<label class="bold-label" for="daughterDistribution">Daughter Distribution:</label>
+						<input type="text" id="daughterDistribution" name="daughterDistribution">
+					</div>
+          <div class="form-group">
+            <label class="bold-label" for="initialCondition">Initial Condition:</label>
+            <input type="text" id="initialCondition" name="initialCondition">
+          </div>
+			
+      </div>
+			
+      </div>
+      <button type="submit">Calculate</button>
+      <p style="font-size:10px; margin-top:5px;"> Note:- Every function varible in the form of y and  Aggregation kernel for sum and product should be x and y form </p>
+    </form>
+  </div>
+  
+
+
